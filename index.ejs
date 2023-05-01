@@ -1,0 +1,29 @@
+<html>
+<head>
+    <link rel="stylesheet" href="stylesheet/style.css">
+</head>
+<body>
+        <div class="main-box">
+                    <button id="btn">change colour</button>
+            </div>
+        </div>
+
+        <script>
+                function generateRandomColor() {
+                    let maxVal = 0xffffff
+                    let randomNumber = Math.random() * maxVal
+                    randomNumber = Math.floor(randomNumber)
+                    randomNumber = randomNumber.toString(16)
+                    let randColor = randomNumber.padStart(6, 0)
+                    return `#${randColor.toUpperCase()}`
+            }
+
+                const btn = document.getElementById('btn')
+
+                btn.addEventListener('click', function onClick(event) {
+                let x = generateRandomColor()
+                document.body.style.backgroundColor = x
+            })
+        </script>
+</body>
+</html>
